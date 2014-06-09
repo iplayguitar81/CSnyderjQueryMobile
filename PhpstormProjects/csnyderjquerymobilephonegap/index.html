@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ringo's Mobile Pizza Joint</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+    <link rel="stylesheet" href="styles.css" />
+
+
+
+    <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css"/>
+
+    <script type="text/javascript" charset="utf-8" src="cordova-2.0.0.js"></script>
+
+
+
+
+
+</head>
+
+<body>
+
+<!-- Start of first page -->
+<div data-role="page" id="home">
+
+    <div data-role="header" style="overflow:hidden;" data-position="fixed">
+
+        <h1 id="titles_play"><img class="img-responsive2" src="images/headerlogo.png" alt="ringos pizza" /></h1>
+
+
+        <div data-role="navbar">
+            <ul class="nav-trickery">
+                <li><a class="ui-state-persist" href="#home" data-icon="home">Home</a></li>
+                <li><a href="#menu" data-icon="info">Menu</a></li>
+                <li><a href="#order" data-icon="star">Order</a></li>
+                <li><a href="#location" data-icon="plus">Location</a></li>
+                <li><a href="#about" data-icon="grid">About</a></li>
+            </ul>
+        </div><!-- /navbar -->
+        <div data-role="navbar">
+            <ul>
+                <li><a href="tel:555-555-5555" data-icon="arrow-r">Call Us</a></li>
+                <li><a href="#compass">Compass</a></li>
+            </ul>
+        </div><!-- /navbar -->
+    </div><!-- /header -->
+
+
+    <div role="main" class="ui-content" id="main_page_align">
+        <p>Welcome to Ringo's Mobile Pizza.  Please give pizza a chance! ;)</p>
+        <img class="img-responsive3" src="images/ringo-logo.png" alt="logo"/>
+        <p>Welcome to Ringo's Mobile Pizza.  Please give pizza a chance! ;)</p>
+        <a href="mailto:iplayguitar81@yahoo.com?subject=Hello%20Chris%20what%20are%20you%20doing&amp;body=blah%20blah%20Blah!" data-role="button">Order Your Pizza</a>
+
+    </div><!-- /content -->
+
+    <div data-role="footer" style="overflow:hidden;" data-position="fixed">
+
+        <span class="credit">Chris Snyder &copy; 2014</span>
+    </div><!-- /footer -->
+</div><!-- /page -->
+
+<!-- Start of second page -->
+
+<div data-role="page" id="menu">
+
+    <div data-role="header" style="overflow:hidden;" data-position="fixed">
+
+        <h1 id="titles_play6"><img class="img-responsive2" src="images/headerlogo.png" alt="ringos pizza" /></h1>
+
+
+        <div data-role="navbar">
+            <ul class="nav-trickery">
+                <li><a href="#home" data-icon="home">Home</a></li>
+                <li><a href="#menu" class="ui-state-persist" data-icon="info">Menu</a></li>
+                <li><a href="#order" data-icon="star">Order</a></li>
+                <li><a href="#location" data-icon="plus">Location</a></li>
+                <li><a href="#about" data-icon="grid">About</a></li>
+            </ul>
+        </div><!-- /navbar -->
+        <div data-role="navbar">
+            <ul>
+                <li><a href="tel:555-555-5555" data-icon="arrow-r">Call Us</a></li>
+            </ul>
+        </div><!-- /navbar -->
+    </div><!-- /header -->
+
+    <div role="main" class="ui-content">
+        <div data-role="content">
+
+
+            <div id="cartDiv">
+                <h1 class="cart_header">Shopping Cart</h1>
+                <p>Your Cart is Currently Empty!</p>
+
+            </div>
+
+            <div id="order_success">Congrats!  You have successfully submitted your order to Ringo's Mobile Pizza!</div>
+            <div id="hide_menu">
+                <div data-role="collapsible-set" data-theme="c" data-content-theme="d">
+                    <div data-role="collapsible" id="crust_collapse">
+
+
+                        <h3>Crusts</h3>
+                        <p>Please select your crust</p>
+
+                        <div data-product="1" class="product">
+                            <img class="img-responsive" alt="thin crust" src="images/thincrust.jpg"/><br/>
+                            <span class="prod_name" data-name='thin crust'>Thin Crust</span>
+                            <span class="prod_price" data-price='8.55'>$8.55</span>
+
+                        </div>
+
+                        <hr/>
+                        <div data-product="2" class="product">
+                            <img class="img-responsive" alt="pan crust" src="images/panpizza.jpg"/><br/>
+                            <span  class="prod_name" data-name='pan crust'>Pan Crust</span>
+                            <span class="prod_price" data-price='9.95'>$9.95</span>
+
+                        </div>
+                        <hr/>
+
+                        <div data-product="3" class="product">
+                            <img class="img-responsive" alt="stuffed crust" src="images/stuffedcrust.jpg"/><br/>
+                            <span class="prod_name" data-name='stuffed crust'>Stuffed Crust</span>
+                            <span data-price='11.95'>$11.95</span>
+
+
+                        </div>
+                        <hr/>
+
+                    </div>
+                    <div data-role="collapsible" class="ui-disabled" id="topping_collapse">
+                        <h3>Toppings</h3>
+                        <p>Please select your topping(s)</p>
+
+                        <div data-product="4" class="product">
+                            <img class="img-responsive" alt="pepperoni" src="images/pepperoni.jpg"/><br/>
+                            <span  class="prod_name" data-name='pepperoni'>Pepperoni</span>
+                            <span  class="prod_price" data-price='0.25'>.25 cents</span>
+
+                        </div>
+                        <hr/>
+
+                        <div data-product="5" class="product">
+                            <img class="img-responsive" alt="olives" src="images/olives.jpg"/><br/>
+                            <span  class="prod_name" data-name='olives'>Olives</span>
+                            <span class="prod_price" data-price='0.25'>.25 cents</span>
+
+                        </div>
+                        <hr/>
+                        <div data-product="6" class="product">
+                            <img class="img-responsive" alt="canuck bacon" src="images/canadianbacon.jpg"/><br/>
+                            <span class="prod_name" data-name='canadian'>Canadian Bacon</span>
+                            <span class="prod_price" data-price='0.25'>.25 cents</span>
+
+                        </div>
+                        <hr/>
+                        <div data-product="7" class="product">
+                            <img class="img-responsive" alt="sausage" src="images/sausage.jpg"/><br/>
+                            <span class="prod_name" data-name='sausage'>Sausage</span>
+                            <span class="prod_price" data-price='0.50'>.50 cents</span>
+                        </div>
+
+                        <hr/>
+
+                    </div>
+
+                    <div data-role="collapsible" class="ui-disabled" id="soda_collapse">
+                        <h3>Sodas</h3>
+                        <p>Please select your soda(s)</p>
+
+                        <div data-product="8" class="product">
+                            <img class="img-responsive" alt="pepsi" src="images/pepsi.gif"/><br/>
+                            <span class="prod_name" data-name='pepsi'>Pepsi</span>
+                            <span class="prod_price" data-price='2.50'>$2.50</span>
+                        </div>
+
+                        <hr/>
+
+                        <div data-product="9" class="product">
+                            <img class="img-responsive" alt="coke" src="images/coke.jpg"/><br/>
+                            <span data-name='coke' class="prod_name">Coke</span>
+                            <span class="prod_price" data-price='2.50'>$2.50</span>
+                        </div>
+
+                        <hr/>
+                    </div>
+
+                    <div data-role="collapsible" class="ui-disabled" id="customer_collapse">
+                        <h3>Customer Info &amp; Finalize Order</h3>
+                        <p>Please tell us where and who to deliver to!</p>
+
+                        <form method=post>
+                            Name: <input type="text" name="name" /> <br/>
+                            Address: <input type="text" name="address" /><br/>
+
+                        </form>
+
+
+                        <p><button id="buy"> Buy Now</button></p>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+
+    </div><!-- /content -->
+
+    <div data-role="footer" style="overflow:hidden;" data-position="fixed">
+
+        <p class="credit">Chris Snyder &copy; 2014</p>
+    </div><!-- /footer -->
+</div><!-- /page -->
+
+
+<!-- Start of third page -->
+<div data-role="page" id="order">
+
+    <div data-role="header" style="overflow:hidden;" data-position="fixed">
+
+        <h1 id="titles_play3"><img class="img-responsive2" src="images/headerlogo.png" alt="ringos pizza" /></h1>
+
+
+        <div data-role="navbar">
+            <ul class="nav-trickery">
+                <li><a href="#home" data-icon="home">Home</a></li>
+                <li><a href="#menu" data-icon="info">Menu</a></li>
+                <li><a class="ui-state-persist" href="#order" data-icon="star">Order</a></li>
+                <li><a href="#location" data-icon="plus">Location</a></li>
+                <li><a href="#about" data-icon="grid">About</a></li>
+            </ul>
+        </div><!-- /navbar -->
+        <div data-role="navbar">
+            <ul>
+                <li><a href="tel:555-555-5555" data-icon="arrow-r">Call Us</a></li>
+            </ul>
+        </div><!-- /navbar -->
+    </div><!-- /header -->
+
+    <div role="main" class="ui-content">
+
+        <div id="cartDiv2"><h1 class="cart_header">Shopping Cart</h1><p>Your Cart is Currently Empty!</p></div>
+
+
+        <div>
+            <button id="saveOrder">Save Favorite Order</button>
+        </div>
+        <div>
+            <button id="loadOrder">Load Favorite Order</button>
+        </div>
+
+    </div><!-- /content -->
+
+    <div data-role="footer" style="overflow:hidden;" data-position="fixed">
+
+        <p class="credit">Chris Snyder &copy; 2014</p>
+    </div><!-- /footer -->
+</div><!-- /page -->
+
+
+
+
+
+
+
+<!-- Start of fourth page -->
+<div data-role="page" id="about">
+
+    <div data-role="header" style="overflow:hidden;" data-position="fixed">
+
+        <h1 id="titles_play4"><img class="img-responsive2" src="images/headerlogo.png" alt="ringos pizza" /></h1>
+
+
+        <div data-role="navbar">
+            <ul class="nav-trickery">
+                <li><a href="#home" data-icon="home">Home</a></li>
+                <li><a href="#menu" data-icon="info">Menu</a></li>
+                <li><a href="#order" data-icon="star">Order</a></li>
+                <li><a href="#location" data-icon="plus">Location</a></li>
+                <li><a href="#about" class="ui-state-persist" data-icon="grid">About</a></li>
+            </ul>
+        </div><!-- /navbar -->
+        <div data-role="navbar">
+            <ul>
+                <li><a href="tel:555-555-5555" data-icon="arrow-r">Call Us</a></li>
+            </ul>
+        </div><!-- /navbar -->
+    </div><!-- /header -->
+
+    <div role="main" class="ui-content">
+        <div data-role="content">
+
+            <img class="img-responsive" src="images/pizzaplace.jpg" alt="pizza place"/>
+            <p>Ringo has been in the kitchen working his magic with pizza dough since before Chef Gordon Ramsay was in diapers. His mother, father, his 13 siblings, five dogs and he arrived in the United States in 1953 after leaving Italy for a better life. The family wasn't the only thing that left Italy that day. The long held family marinara and pizza crust recipes handed down by generations of pizza makers that spanned as far back in time as the days of Da Vinci.
+
+                Armed with this recipe the family decided to open up their restaurant Ringo's Pizza Joint in Spokane just a few months after they arrived at the Port of the mighty Spokane Bay. :D No not Coeur D'Alene, but Spokane Bay! Arghh mateys!
+
+                Mama always expressed quality over quantity and that is why even though there have been several attempts by big corporate outfits to turn Ringo's into a national chain, Mama has decline preferring to cater solely to Spokane and those lucky inhabitants therein.
+
+                The restaurant is located in the heart of downtown Spokane facing the beautiful Spokane Bay. If you squint hard enough you can see Killer Whales off towards the sunset as you dine at dinner on our pier dining deck.
+            </p>
+
+            <p>            Ringo's Pizza Joint<br/>
+
+                123456 789th Lane<br/>
+
+                Spokane, WA<br/>
+
+                99201
+
+                Phone: 555-555-5555</p>
+        </div>
+
+    </div><!-- /content -->
+
+    <div data-role="footer" style="overflow:hidden;" data-position="fixed">
+
+        <p class="credit">Chris Snyder &copy; 2014</p>
+    </div><!-- /footer -->
+</div><!-- /page -->
+
+
+
+
+<!-- Start of fifth page -->
+<div data-role="page" id="location">
+
+    <div data-role="header" style="overflow:hidden;" data-position="fixed">
+
+        <h1 id="titles_play5"><img class="img-responsive2" src="images/headerlogo.png" alt="ringos pizza" /></h1>
+
+
+        <div data-role="navbar">
+            <ul class="nav-trickery">
+                <li><a href="#home" data-icon="home">Home</a></li>
+                <li><a href="#menu" data-icon="info">Menu</a></li>
+                <li><a href="#order" data-icon="star">Order</a></li>
+                <li><a class="ui-state-persist" href="#location" data-icon="plus">Location</a></li>
+                <li><a href="#about" data-icon="grid">About</a></li>
+            </ul>
+        </div><!-- /navbar -->
+        <div data-role="navbar">
+            <ul>
+                <li><a href="tel:555-555-5555" data-icon="arrow-r">Call Us</a></li>
+            </ul>
+        </div><!-- /navbar -->
+    </div><!-- /header -->
+
+    <div role="main" class="ui-content">
+
+
+        <script>
+
+            navigator.geolocation.getCurrentPosition(function(pos) {
+
+                var lat= pos.coords.latitude;
+                var lng= pos.coords.longitude;
+                console.log(lat+ " : " + lng );
+                $("#lat").text(lat);
+                $("#lng").text(lng);
+                // var url = '<a href="http://maps.google.com/maps?q=' + lat + "," + lng + '">Your Location</a>';
+
+
+                var url = '<a href="http://maps.google.com/maps?daddr=Pizza+Hut,+3304+N.+Nevada,+Spokane,+WA+99207&saddr=' + lat + ',' + lng + '">Your Location</a>';
+                $("#url").html( url );
+
+
+                $("#url").append(url);
+
+                var map = '<div class="google-maps"><iframe width="360" height="360" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" ' +
+                        'src="https://maps.google.com/maps?daddr=Pizza+Hut,+3304+N.+Nevada,+Spokane,+WA+99207&amp;saddr=' + lat + ',' + lng +
+                        '&amp;ie=UTF8&amp;t=h&amp;ll='+ lat +','+ lng +'&amp;z=14&amp;output=embed&amp;public=true"></iframe><br /><small><a href="https://maps.google.com/maps?daddr=Pizza+Hut,+3304+N.+Nevada,+Spokane,+WA+99207&amp;saddr='+lat+ ',' + lng + '&amp;ie=UTF8&amp;t=h&amp;ll='+lat+','+lng + '&amp;z=14&amp;source=embed style="color:#0000FF;text-align:left'+">View Larger Map</a></small></div>'";
+                $("#directionMap").html(map);
+
+
+
+            })
+
+
+        </script>
+        Latitude: <span id="lat"></span><br/>
+        Longitude: <span id="lng"></span><br/>
+
+        Display Actual Map Here!
+        <div id="directionMap">
+
+        </div>
+
+    </div><!-- /content -->
+    <div data-role="footer" style="overflow:hidden;" data-position="fixed">
+
+        <p class="credit">Chris Snyder &copy; 2014</p>
+    </div><!-- /footer -->
+</div><!-- /page -->
+
+
+
+<!-- Start of test page -->
+<div data-role="page" id="compass">
+
+    <div data-role="header" style="overflow:hidden;" data-position="fixed">
+
+        <h1 id="titles_play8"><img class="img-responsive2" src="images/headerlogo.png" alt="ringos pizza" /></h1>
+
+
+        <div data-role="navbar">
+            <ul class="nav-trickery">
+                <li><a href="#home" data-icon="home">Home</a></li>
+                <li><a href="#menu" class="ui-state-persist" data-icon="info">Menu</a></li>
+                <li><a href="#order" data-icon="star">Order</a></li>
+                <li><a href="#location" data-icon="plus">Location</a></li>
+                <li><a href="#about" data-icon="grid">About</a></li>
+            </ul>
+        </div><!-- /navbar -->
+        <div data-role="navbar">
+            <ul>
+                <li><a href="tel:555-555-5555" data-icon="arrow-r">Call Us</a></li>
+            </ul>
+        </div><!-- /navbar -->
+    </div><!-- /header -->
+
+    <div role="main" class="ui-content">
+        <div data-role="content">
+
+
+            <div id="heading">Waiting for heading...</div>
+            <button onclick="startWatch();">Start Watching</button>
+            <button onclick="stopWatch();">Stop Watching</button>
+
+
+
+        </div>
+
+
+
+
+
+
+    </div>
+
+</div><!-- /content -->
+
+<div data-role="footer" style="overflow:hidden;" data-position="fixed">
+
+    <p class="credit">Chris Snyder &copy; 2014</p>
+</div><!-- /footer -->
+</div><!-- /page -->
+
+
+
+
+
+<!-- Start of test page -->
+<div data-role="page" id="test_page">
+
+    <div data-role="header" style="overflow:hidden;" data-position="fixed">
+
+        <h1 id="titles_play7"><img class="img-responsive2" src="images/headerlogo.png" alt="ringos pizza" /></h1>
+
+
+        <div data-role="navbar">
+            <ul class="nav-trickery">
+                <li><a href="#home" data-icon="home">Home</a></li>
+                <li><a href="#menu" class="ui-state-persist" data-icon="info">Menu</a></li>
+                <li><a href="#order" data-icon="star">Order</a></li>
+                <li><a href="#location" data-icon="plus">Location</a></li>
+                <li><a href="#about" data-icon="grid">About</a></li>
+            </ul>
+        </div><!-- /navbar -->
+        <div data-role="navbar">
+            <ul>
+                <li><a href="tel:555-555-5555" data-icon="arrow-r">Call Us</a></li>
+            </ul>
+        </div><!-- /navbar -->
+    </div><!-- /header -->
+
+    <div role="main" class="ui-content">
+        <div data-role="content">
+
+
+            <div id="cartDiv3">
+                <h1 class="cart_header">Shopping Cart</h1>
+                <p>Your Cart is Currently Empty!</p>
+
+            </div>
+
+            <div data-role="collapsible-set" data-theme="c" data-content-theme="d">
+                <div data-role="collapsible" id="crust_collapse2">
+
+
+                    <h3>Crusts</h3>
+                    <p>Please select your crust</p>
+
+                    <div data-product="1" class="product">
+                        <img class="img-responsive" alt="thin crust" src="images/thincrust.jpg"/><br/>
+                        <span data-name='thin crust'>Thin Crust</span>
+                        <span data-price='8.55'>$8.55</span>
+                        <span class='description'>We pride ourselves in the thin-ness of our thin crust!</span>
+                    </div>
+
+                    <div data-product="2" class="product">
+                        <img class="img-responsive" alt="pan crust" src="images/panpizza.jpg"/><br/>
+                        <span data-name='pan crust'>Pan Crust</span>
+                        <span data-price='9.95'>$9.95</span>
+                        <span class='description'>Our pans our hand crafted by master pan-smiths to give our pan crust the excellence your taste buds deserve!</span>
+                    </div>
+
+                    <div data-product="3" class="product">
+                        <img class="img-responsive" alt="stuffed crust" src="images/stuffedcrust.jpg"/><br/>
+                        <span data-name='stuffed crust'>Stuffed Crust</span>
+                        <span data-price='11.95'>11.95</span>
+                        <span class='description'>This best stuffed crust pizza on the market!</span>
+
+                    </div>
+
+
+                </div>
+                <div data-role="collapsible" class="ui-disabled" id="topping_collapse2">
+                    <h3>Toppings</h3>
+                    <p>Please select your topping(s)</p>
+
+                    <div data-product="4" class="product">
+                        <img class="img-responsive" alt="pepperoni" src="images/pepperoni.jpg"/><br/>
+                        <span data-name='pepperoni'>Pepperoni</span>
+                        <span data-price='0.25'>.25 cents</span>
+                        <span class='description'>Our pepperoni is to die for!  But live so you can taste some first! </span>
+                    </div>
+
+                    <div data-product="5" class="product">
+                        <img class="img-responsive" alt="olives" src="images/olives.jpg"/><br/>
+                        <span data-name='olives'>Olives</span>
+                        <span data-price='0.25'>.25 cents</span>
+                        <span class='description'>Our olives were grown in Italy! Very tasty! </span>
+                    </div>
+
+                    <div data-product="6" class="product">
+                        <img class="img-responsive" alt="canuck bacon" src="images/canadianbacon.jpg"/><br/>
+                        <span data-name='canadian'>Canadian Bacon</span>
+                        <span data-price='0.25'>.25 cents</span>
+                        <span class='description'>Our ham is shipped to Ottawa and maple smoked by a local Canuck giving our Canadian Bacon a truth authenticity. </span>
+                    </div>
+
+                    <div data-product="7" class="product">
+                        <img class="img-responsive" alt="sausage" src="images/sausage.jpg"/><br/>
+                        <span data-name='sausage'>Sausage</span>
+                        <span data-price='0.50'>.50 cents</span>
+                        <span class='description'>Our ham is shipped to Ottawa and maple smoked by a local Canuck giving our Canadian Bacon a truth authenticity. </span>
+                    </div>
+
+
+                </div>
+                <div data-role="collapsible" class="ui-disabled" id="soda_collapse2">
+                    <h3>Sodas</h3>
+                    <p>Please select your soda(s)</p>
+
+                    <div data-product="8" class="product">
+                        <img class="img-responsive" alt="pepsi" src="images/pepsi.gif"/><br/>
+                        <span data-name='pepsi'>Pepsi</span>
+                        <span data-price='2.50'>$2.50</span>
+                        <span class='description'>You can belong to the endless generation of next's spanning nearly 80 decades of next-ness.</span>
+                    </div>
+
+                    <div data-product="9" class="product">
+                        <img class="img-responsive" alt="coke" src="images/coke.jpg"/><br/>
+                        <span data-name='coke'>Coke</span>
+                        <span data-price='2.50'>$2.50</span>
+                        <span class='description'>We only changed our recipe once.  We learned our lesson.</span>
+                    </div>
+
+                </div>
+
+                <div data-role="collapsible" class="ui-disabled" id="customer_collapse2">
+                    <h3>Customer Info &amp; Finalize Order</h3>
+                    <p>Please tell us where and who to deliver to!</p>
+
+                    <form method=post>
+                        Name: <input type="text" name="name" /> <br/>
+                        Address: <input type="text" name="address" /><br/>
+
+                    </form>
+
+
+                    <p><button id="buy2"> Buy Now</button></p>
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+
+        </div>
+
+    </div><!-- /content -->
+
+    <div data-role="footer" style="overflow:hidden;" data-position="fixed">
+
+        <p class="credit">Chris Snyder &copy; 2014</p>
+    </div><!-- /footer -->
+</div><!-- /page -->
+
+
+
+
+
+<script>
+
+//    function sendInfo(){
+//
+//        var cust_name = $('input[name="name"]').val();
+//        var cust_add = $('input[name="address"]').val();
+//        $.ajax({
+//            type: "POST",
+//            url: 'buy.php',
+//            dataType: "json",
+//            data: { cust: JSON.stringify(cust_name), addy: JSON.stringify(cust_add) }
+//        })
+//
+//
+//    }
+
+
+var cart = {};
+
+function displayCart() {
+    var cartDiv = $('#cartDiv');
+    cartDiv.html('<h1 class="cart_header">Shopping Cart</h1>');
+
+    var cartDiv2 = $('#cartDiv2');
+    cartDiv2.html('<h1 class="cart_header">Shopping Cart</h1>');
+
+
+    var grandTotal=0;
+
+    for(var item in cart) {
+
+        qty = cart[item].qty;
+        price = cart[item].price;
+        var subtotal = qty * price;
+        grandTotal += subtotal;
+        cartDiv.append( '<p> Quant: ' + qty + ' ' +cart[item].name +
+                ' @- -$' + price + ' = $' +
+                subtotal.toFixed(2) + '</p>');
+
+        cartDiv2.append( '<p> Quant: ' + qty + ' ' +cart[item].name +
+                ' @- -$' + price + ' = $' +
+                subtotal.toFixed(2) + '</p>');
+
+
+    }
+    cartDiv.append('<p class="grand_total">Grand Total:  $'+ grandTotal.toFixed(2) +'</p>')
+    cartDiv2.append('<p class="grand_total">Grand Total:  $'+ grandTotal.toFixed(2) +'</p>')
+
+}
+
+$(document).ready(function(){
+    $("#order_success").hide();
+
+    $('div[data-product]').each( function(){
+        $(this).append('<button class="btnCart">Add Item To Cart</button>');
+    })
+
+    $('.btnCart').on("click", function(event){
+        var pid = $(this).parent().parent().data("product");
+        console.log( pid );
+        if( cart[pid] ){
+            cart[pid].qty += 1;
+        } else {
+            cart[pid] = new Object();
+            cart[pid].qty = 1;
+            cart[pid].pid = pid;
+            cart[pid].name = $(this).parent().siblings("span").data("name");
+            cart[pid].price = $(this).parent().siblings("span").next().data("price");
+        }
+        displayCart();
+
+    })
+
+
+    $('#buy').on("click", function(event) {
+
+        var buyURL= "";
+
+        for (var item in cart ) {
+
+            buyURL +="&pid[]=" + item + "&qty[]=" + cart[item].qty;
+
+        }
+        var cust_name = $('input[name="name"]').val();
+        var cust_add = $('input[name="address"]').val();
+
+        $.ajax({
+            type:"POST",
+            url: 'buy.php',
+            data: { cart_array: JSON.stringify(cart), cust: JSON.stringify(cust_name), addy: JSON.stringify(cust_add) }
+
+        });
+
+
+        $("#buy").parent().hide();
+        $("#hide_menu").hide();
+        $("#cartDiv").hide();
+        $("#cartDiv2").hide();
+        $("#order_success").show();
+
+        console.log(cart);
+
+    })
+
+
+    $("#crust_collapse").find(".btnCart").click(function () {
+
+
+        $('#crust_collapse').trigger('collapse');
+        $("#crust_collapse").addClass("ui-disabled");
+
+        $("#topping_collapse").removeClass("ui-disabled");
+
+        $("#soda_collapse").removeClass("ui-disabled");
+
+        $("#customer_collapse").removeClass("ui-disabled");
+
+
+    });
+
+
+
+    $("#saveOrder").on("click", function(event ){
+
+        var cartStr="[";
+        for (var item in cart ){
+            cartStr += JSON.stringify(cart[item]) + ",";
+        }
+
+        cartStr = cartStr.slice(0,-1);
+
+        cartStr +="]";
+        console.log(cartStr);
+        localStorage['cart']= cartStr;
+
+    })
+
+    $("#loadOrder").on("click", function(event ){
+
+        cart=[];
+        var obj = JSON.parse(localStorage['cart']);
+
+
+        for(item in obj) {
+            pid = obj[item].pid;
+            cart[pid] =obj[item];
+            console.log(obj);
+
+        }
+
+        displayCart();
+        $("#crust_collapse").addClass("ui-disabled");
+        $("#topping_collapse").removeClass("ui-disabled");
+        $("#soda_collapse").removeClass("ui-disabled");
+        $("#customer_collapse").removeClass("ui-disabled");
+
+    })
+
+})
+
+// The watch id references the current `watchHeading`
+var watchID = null;
+
+// Wait for Cordova to load
+//
+document.addEventListener("deviceready", onDeviceReady, false);
+
+// Cordova is ready
+//
+function onDeviceReady() {
+    startWatch();
+}
+
+// Start watching the compass
+//
+function startWatch() {
+
+    // Update compass every 3 seconds
+    var options = { frequency: 3000 };
+
+    watchID = navigator.compass.watchHeading(onSuccess, onError, options);
+}
+
+// Stop watching the compass
+//
+function stopWatch() {
+    if (watchID) {
+        navigator.compass.clearWatch(watchID);
+        watchID = null;
+    }
+}
+
+// onSuccess: Get the current heading
+//
+function onSuccess(heading) {
+    var element = document.getElementById('heading');
+    element.innerHTML = 'Heading: ' + heading.magneticHeading;
+}
+
+// onError: Failed to get the heading
+//
+function onError(compassError) {
+    alert('Compass error: ' + compassError.code);
+}
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

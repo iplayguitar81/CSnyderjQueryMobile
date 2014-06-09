@@ -1,0 +1,179 @@
+.ui-navbar li .ui-btn { font-size: .5em;
+}
+
+.img-responsive {
+    width: 80%;
+    margin-left: 10%;
+    border: 1px inset #000;
+
+}
+
+.img-responsive2 {
+    width: 100%;
+
+
+
+}
+
+.img-responsive3 {
+    width: 50%;
+    margin-left:20%;
+
+
+
+
+}
+
+#titles_play {
+               font-size: 1em;
+               width: 95%;
+               margin-left: 2%;
+
+
+
+
+}
+
+#titles_play2 {
+    font-size: 1em;
+    width: 95%;
+    margin-left: 2%;
+
+}
+
+#titles_play3 {
+    font-size: 1em;
+    width: 95%;
+    margin-left: 2%;
+
+
+}
+
+#titles_play4 {
+    font-size: 1em;
+    width: 95%;
+    margin-left: 2%;
+
+
+}
+
+#titles_play5 {
+    font-size: 1em;
+    width: 95%;
+    margin-left: 2%;
+
+
+}
+
+#titles_play6 {
+    font-size: 1em;
+    width: 95%;
+    margin-left: 2%;
+
+
+}
+
+
+
+.ui-state-persist .ui-btn .ui-btn-inline .ui-btn-active .ui-btn-up-a {
+    font-size: .55em;
+}
+
+.ui-btn-inner{
+    text-overflow: initial; /* Get rid of the ellipsis */
+    padding-left: 5px; /* Play with padding to make max use of available button width */
+}
+.ui-btn-text {
+    font-size: .975em; /* Play with font size of the text */
+}
+
+.credit { margin-left: 20%;
+          letter-spacing: .16em;
+          font-variant: small-caps;
+
+}
+
+.head-logo {
+    width: 10%;
+    height: 30%;
+    margin-bottom: 0;
+
+
+}
+#cartDiv2 { color: #000;
+            border: 2px inset #000;
+            width: 50%;
+            font-family: Tahoma, Arial, "Trebuchet MS";
+            padding: 20px;
+            margin-left: auto;
+            margin-right: auto;
+
+}
+
+#cartDiv { color: #000;
+           border: 2px inset #000;
+           width: 50%;
+           font-family: Tahoma, Arial, "Trebuchet MS";
+           padding: 20px;
+           margin-left: auto;
+           margin-right: auto;
+
+
+}
+
+.cart_stuff {
+    margin-left: 5px;
+    text-align: center;
+    font-size: 1em;
+
+
+
+}
+
+.grand_total {
+    text-align: center;
+    font-weight: 800;
+    color: darkgreen;
+    font-size: 1em;
+
+
+}
+
+.cart_header {
+    font-size: 1.75em;
+    background-color: silver;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    letter-spacing: .08em;
+    text-align: center;
+
+}
+
+
+
+#order_success {
+    font-size: 2em;
+    font-weight: 800;
+
+    color: darkblue;
+    font-family: Impact;
+}
+
+#main_page_align p {
+  text-align: center;
+}
+
+.prod_name{
+ font-weight: 800;
+ margin-left: 40%;
+}
+
+.prod_price {
+    color: darkgreen;
+    text-align: center;
+}
+
+.fake_class{}
+
+
